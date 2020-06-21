@@ -13,34 +13,42 @@ export class App extends Component {
   }
   componentDidMount() {
     this.authListener();
-    const dbRef = firebase.database().ref();
-
   }
 
   authListener = () => {
-    firebase.auth().onAuthStateChanged(user => {
-      console.log(user);
-      if (user) {
-        this.setState({
-          user,
-          isLoggedIn: true
-        });
-      } else {
-        this.setState({
-          user: null,
-          isLoggedIn: false
-        });
-      }
-    })
+    const dbRef =
+      firebase.auth().onAuthStateChanged(user => {
+        console.log(user);
+        if (user) {
+          const dbUser = {
+            email: user.email,
+            displayName: user.displayName,
+            photoUrl: user.photoURL,
+            uid: user.uid
+          }
+          firebase.database().ref('users/' + user.uid).set(dbUser);
+          this.setState({
+            user: dbUser,
+            isLoggedIn: true
+          });
+
+        } else {
+          this.setState({
+            user: null,
+            isLoggedIn: false
+          });
+        }
+      })
   }
 
   componentWillUnmount() {
     this.authListener();
   }
   render() {
+    { console.log(this.state.user) }
     return (
       <div>
-        {this.state.isLoggedIn ? <HomePage /> : <LogInPage />}
+        {this.state.isLoggedIn ? <HomePage user={this.state.user} /> : <LogInPage />}
       </div>
     )
   }
