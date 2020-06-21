@@ -6,7 +6,7 @@ function Header({ user }) {
             <h1>Drop in</h1>
             <div>
                 <img src={user.photoUrl} alt="" />
-                <p>{user.displayName}</p>
+                {user.displayName ? <p>{user.displayName}</p> : <p>{user.email}</p>}
             </div>
         </nav>
     )

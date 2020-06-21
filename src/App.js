@@ -45,7 +45,6 @@ export class App extends Component {
     this.authListener();
   }
   render() {
-    { console.log(this.state.user) }
     return (
       <div>
         {this.state.isLoggedIn ? <HomePage user={this.state.user} /> : <LogInPage />}
