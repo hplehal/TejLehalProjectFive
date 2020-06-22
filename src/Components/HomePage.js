@@ -8,9 +8,23 @@ class HomePage extends Component {
     constructor() {
         super();
         this.state = {
-
+            longitude: '',
+            latitude: ''
         }
     }
+    componentDidMount() {
+        this.getGeolocation();
+    }
+
+    getGeolocation = async () => {
+        await navigator.geolocation.getCurrentPosition(currPosition => this.setState({
+            longitude: currPosition.coords.longitude,
+            latitude: currPosition.coords.latitude
+        }),
+            (err) => console.log(err)
+        );
+    }
+
 
     handleLogOut = () => {
         firebase.auth().signOut();
@@ -21,6 +35,8 @@ class HomePage extends Component {
         return (
             <div>
                 <Header user={user} />
+                <p>{this.state.longitude}</p>
+                <p>{this.state.latitude}</p>
                 <button type="submit" onClick={this.handleLogOut}>Log Out</button>
                 <section>
                     {games.map((game) => {
