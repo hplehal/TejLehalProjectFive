@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import firebase from '../firebase';
 import Header from './Header';
+import GamePost from './GamePost';
+import CreatePickUpGame from './CreatePickUpGame';
 
 class HomePage extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
 
         }
@@ -15,12 +17,19 @@ class HomePage extends Component {
     }
 
     render() {
-        const { user } = this.props;
+        const { user, games } = this.props;
         return (
             <div>
                 <Header user={user} />
-                <h1>Main Page</h1>
                 <button type="submit" onClick={this.handleLogOut}>Log Out</button>
+                <section>
+                    {games.map((game) => {
+                        return (
+                            <GamePost game={game} />
+                        )
+                    })}
+                </section>
+                < CreatePickUpGame user={user} />
             </div>
         );
     }

@@ -8,11 +8,21 @@ export class App extends Component {
     super();
     this.state = {
       user: {},
+      games: [],
       isLoggedIn: true
     }
   }
   componentDidMount() {
     this.authListener();
+    const dbRef = firebase.database().ref('gamesPosted');
+    dbRef.on('value', (result) => {
+
+      const data = result.val();
+      const newState = Object.values(data);
+      this.setState({
+        games: newState
+      })
+    })
   }
 
   authListener = () => {
@@ -47,7 +57,7 @@ export class App extends Component {
   render() {
     return (
       <div>
-        {this.state.isLoggedIn ? <HomePage user={this.state.user} /> : <LogInPage />}
+        {this.state.isLoggedIn ? <HomePage user={this.state.user} games={this.state.games} /> : <LogInPage />}
       </div>
     )
   }
