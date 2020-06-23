@@ -31,10 +31,14 @@ class HomePage extends Component {
         return (
             <main>
                 <Header user={user} />
+                <div className="dropInBanner">
+                    <button type="submit">Create Pick Up Game Post</button>
+                </div>
                 <p>{this.state.longitude}</p>
                 <p>{this.state.latitude}</p>
                 <button type="submit" onClick={this.handleLogOut}>Log Out</button>
                 <button type="submit" onClick={this.getGeolocation}> Find Post Near You</button>
+
                 <section>
                     {games.map((game, index) => {
                         return (

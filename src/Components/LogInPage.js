@@ -43,8 +43,6 @@ class LogInPage extends Component {
                         {this.state.isLogInOpen ? <LogInForm handleChange={this.handleChange} email={this.state.email} password={this.state.password} /> : <SignUpForm handleChange={this.handleChange} email={this.state.email} password={this.state.password} />}
 
                     </div>
-
-
                 </div>
             </div>
         );

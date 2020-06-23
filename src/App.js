@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import LogInPage from './Components/LogInPage';
 import HomePage from './Components/HomePage';
+import Footer from './Components/Footer';
 import firebase from './firebase';
 
 export class App extends Component {
@@ -57,6 +58,7 @@ export class App extends Component {
     return (
       <div>
         {this.state.isLoggedIn ? <HomePage user={this.state.user} games={this.state.games} /> : <LogInPage />}
+        <Footer />
       </div>
     )
   }
