@@ -12,9 +12,6 @@ class HomePage extends Component {
             latitude: ''
         }
     }
-    componentDidMount() {
-        this.getGeolocation();
-    }
 
     getGeolocation = async () => {
         await navigator.geolocation.getCurrentPosition(currPosition => this.setState({
@@ -25,7 +22,6 @@ class HomePage extends Component {
         );
     }
 
-
     handleLogOut = () => {
         firebase.auth().signOut();
     }
@@ -33,20 +29,21 @@ class HomePage extends Component {
     render() {
         const { user, games } = this.props;
         return (
-            <div>
+            <main>
                 <Header user={user} />
                 <p>{this.state.longitude}</p>
                 <p>{this.state.latitude}</p>
                 <button type="submit" onClick={this.handleLogOut}>Log Out</button>
+                <button type="submit" onClick={this.getGeolocation}> Find Post Near You</button>
                 <section>
-                    {games.map((game) => {
+                    {games.map((game, index) => {
                         return (
-                            <GamePost game={game} />
+                            <GamePost key={index} game={game} />
                         )
                     })}
                 </section>
                 < CreatePickUpGame user={user} />
-            </div>
+            </main>
         );
     }
 }

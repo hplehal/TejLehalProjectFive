@@ -27,7 +27,6 @@ export class App extends Component {
 
   authListener = () => {
     firebase.auth().onAuthStateChanged(user => {
-      console.log(user);
       if (user) {
         const dbUser = {
           email: user.email,
