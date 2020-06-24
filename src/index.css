@@ -239,18 +239,23 @@ main {
   background-color: #29648A;
 }
 .dateTimeSport {
+  color: #ffffff;
   background-color: #25274D;
+  height: 200px;
+  padding: 15px;
 }
 
 .detailsContainer {
   background-color: #2E9CCA;
+  height:200px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
  justify-content: center;
  align-items: center;
 }
 .mapContainer{
-  
+
 }
 
 section button{
