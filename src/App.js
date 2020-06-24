@@ -65,3 +65,16 @@ export class App extends Component {
 }
 
 export default App
+
+
+// MapGl
+// npm install mapbox-gl --save
+
+// var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
+
+// mapboxgl.accessToken = 'pk.eyJ1IjoidGVqbGVoYWwiLCJhIjoiY2prMWk0Z2ZpMGh1eDN3cWx3OGExZHY2eiJ9.VXfWtygf4iAUgEh8HPSrlw';
+// var map = new mapboxgl.Map({
+//   container: 'YOUR_CONTAINER_ELEMENT_ID',
+//   style: 'mapbox://styles/mapbox/streets-v11'
+// });
+// /

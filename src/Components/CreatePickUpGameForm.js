@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
+import LocationSearchInput from './LocationSearchInput';
 import firebase from '../firebase';
-class CreatePickUpGame extends Component {
+import {
+    geocodeByAddress,
+    getLatLng,
+} from 'react-places-autocomplete';
+
+
+
+
+class CreatePickUpGameForm extends Component {
     constructor() {
         super();
         this.state = {
@@ -9,14 +18,30 @@ class CreatePickUpGame extends Component {
             levelOfCompetition: '',
             description: '',
             typeOfSport: '',
+            locationLatLng: {}
         }
     }
 
     handleChange = (event) => {
-        event.preventDefault();
+        // event.preventDefault();
         this.setState({
             [event.target.name]: event.target.value
         })
+    }
+
+    handleLocationChange = (location) => {
+        this.setState({
+            location
+        })
+    }
+
+    handleSelect = (location) => {
+        geocodeByAddress(location)
+            .then(results => getLatLng(results[0]))
+            .then(latLng => this.setState({
+                locationLatLng: latLng
+            }))
+            .catch(error => console.error('Error', error));
     }
 
     handleSubmit = (event) => {
@@ -33,7 +58,8 @@ class CreatePickUpGame extends Component {
             location: '',
             levelOfCompetition: '',
             description: '',
-            typeOfSport: ''
+            typeOfSport: '',
+            locationLatLng: {}
         })
     }
 
@@ -45,7 +71,7 @@ class CreatePickUpGame extends Component {
                     <label>Title</label>
                     <input type="text" onChange={this.handleChange} name="title" id="pickUpGameTitle" value={this.state.title} />
                     <label>Location</label>
-                    <input type="text" onChange={this.handleChange} name="location" id="pickUpGameLocation" value={this.state.location} />
+                    <LocationSearchInput handleChange={this.handleLocationChange} handleSelect={this.handleSelect} name="location" id="pickUpGameLocation" value={this.state.location} />
                     <label>Brief Description</label>
                     <textarea name="description" onChange={this.handleChange} id="pickUpGameDescription" value={this.state.description} cols="30" rows="10"></textarea>
                     <label>Level Of Competition</label>
@@ -59,4 +85,4 @@ class CreatePickUpGame extends Component {
     }
 }
 
-export default CreatePickUpGame;
+export default CreatePickUpGameForm;

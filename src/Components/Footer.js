@@ -2,9 +2,9 @@ import React from 'react'
 
 function Footer() {
     return (
-        <div>
-            <p>Copyright Ⓒ 2020 Tejlehal</p>
-        </div>
+        <footer>
+            <p>Copyright Ⓒ 2020 TejLehal</p>
+        </footer>
     )
 }
 

@@ -1,13 +1,18 @@
 import React from 'react'
 
-function Header({ user }) {
+function Header({ user, handleLogOut }) {
     return (
         <nav>
-            <h2>Drop in</h2>
-            <div className="userName">
-                <img src={user.photoUrl} alt="" />
-                {user.displayName ? <p>{user.displayName}</p> : <p>{user.email}</p>}
-            </div>
+            <h2>Drop<span>i</span>n</h2>
+            <ul className="navList">
+                <li className="userName">
+                    <img src={user.photoUrl} alt="" />
+                    {user.displayName ? <p>{user.displayName}</p> : <p>{user.email}</p>}
+                </li>
+                <li>
+                    <button type="submit" onClick={handleLogOut}>Log Out</button>
+                </li>
+            </ul>
         </nav>
     )
 }

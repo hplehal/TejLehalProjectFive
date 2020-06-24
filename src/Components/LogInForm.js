@@ -37,13 +37,13 @@ class LogInForm extends Component {
         return (
             <div>
                 <form onSubmit={this.handleLogIn}>
-                    <label>Username</label>
+                    <label className="sr-only">Username</label>
                     <input type="email" name="email" value={this.props.email} onChange={this.props.handleChange} id="inputEmail" placeholder="Enter email" />
-                    <label>Password</label>
+                    <label className="sr-only">Password</label>
                     <input type="password" name="password" value={this.state.password} onChange={this.props.handleChange} id="inputPassword" placeholder="Password" />
-                    <button type="submit" onClick={this.handleLogIn} disabled={!this.props.password}>Log In</button>
-                    <p>-OR-</p>
-                    <button type="submit" onClick={this.handleGoogleSignIn}>Sign In with Google</button>
+                    <button className="logInButton" type="submit" onClick={this.handleLogIn} disabled={!this.props.password}>Log In</button>
+                    <p className="orForm">-OR-</p>
+                    <button className="googleButton" type="submit" onClick={this.handleGoogleSignIn}>Sign In with Google</button>
                     {this.state.error ? <p>{this.state.error}</p> : null}
                 </form>
             </div>

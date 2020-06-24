@@ -34,10 +34,10 @@ class LogInPage extends Component {
         return (
             <div>
                 <div className="logInForm">
-                    <h1>DropIn</h1>
+                    <h1>Drop<span>i</span>n</h1>
                     <div className="formHeading">
                         <div className="changeForm">
-                            <button type="submit" onClick={this.showLogIn}>Log In</button>
+                            <button className="active" type="submit" tabIndex="1" onClick={this.showLogIn}>Log In</button>
                             <button type="submit" onClick={this.showSignUp}>Sign Up</button>
                         </div>
                         {this.state.isLogInOpen ? <LogInForm handleChange={this.handleChange} email={this.state.email} password={this.state.password} /> : <SignUpForm handleChange={this.handleChange} email={this.state.email} password={this.state.password} />}
