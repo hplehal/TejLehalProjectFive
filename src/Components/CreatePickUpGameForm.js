@@ -6,9 +6,6 @@ import {
     getLatLng,
 } from 'react-places-autocomplete';
 
-
-
-
 class CreatePickUpGameForm extends Component {
     constructor() {
         super();

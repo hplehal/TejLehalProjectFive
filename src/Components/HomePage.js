@@ -22,6 +22,7 @@ class HomePage extends Component {
         }),
             (err) => console.log(err)
         );
+        // this.props.games.filter(game => {(this.state.longitude + 5) > })
     }
 
     handleLogOut = () => {
@@ -39,8 +40,6 @@ class HomePage extends Component {
             isButtonClicked: false,
         })
     }
-
-
 
     render() {
         const { user, games } = this.props;

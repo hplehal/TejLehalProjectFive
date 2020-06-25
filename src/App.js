@@ -13,6 +13,7 @@ export class App extends Component {
       isLoggedIn: true
     }
   }
+  // Mount the authorized user and get the games in the database
   componentDidMount() {
     this.authListener();
     const dbRef = firebase.database().ref('gamesPosted');
@@ -53,7 +54,7 @@ export class App extends Component {
   componentWillUnmount() {
     this.authListener();
   }
-
+  // App JS will check if loggedIn and have a user, if so go to HomePage else stay in LogInPage
   render() {
     return (
       <div>

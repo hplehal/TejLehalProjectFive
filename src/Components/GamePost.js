@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactMapGL, { Marker } from 'react-map-gl';
-import pointer from '../assets/images/marker.png'
-// import { Icon } from 'leaflet';
+import pointer from '../assets/images/marker.png';
 
 const GamePost = ({ game, index }) => {
     const mapGl = {

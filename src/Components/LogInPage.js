@@ -28,7 +28,7 @@ class LogInPage extends Component {
             isLogInOpen: false,
         })
     }
-
+    // LogInPage -> Child Components are LogInForm, SignUpForm
     render() {
         return (
             <div>
