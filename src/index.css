@@ -298,10 +298,12 @@ ul.navList {
   height: 200px;
   width: 120px;
   padding: 15px;
+  word-wrap: break-word;
 }
 
 .dateTimeSport p {
   margin-bottom: 10px;
+  font-size:  1.4rem;
   font-weight: 700;
 }
 
