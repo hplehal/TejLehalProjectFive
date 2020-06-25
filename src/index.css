@@ -275,7 +275,7 @@ ul.navList {
   width:350px;
   padding: 15px;
   background-color: #25274D;
-  margin-bottom: 25px;
+  margin: 0 0 25px;
   color: #ffffff;
   font-weight: 700;
   font-size: 2rem;
@@ -362,10 +362,24 @@ ul.navList {
   width: 30px;
 }
 
-@media (max-width: 480px) {
-  textarea{
-    width:80vw;
+
+
+@media (max-width: 1200px) {
+  .postContainer{
+    flex-direction: column;
   }
+  .dateTimeSport, .detailsContainer{
+    text-align: center;
+    width: 400px;
+    height: auto;
+  }
+  .createPickUpGame input, textarea{
+    width: 50vw;
+  }
+}
+
+@media (max-width: 480px) {
+
   .formHeading {
     width: 80vw;
   }
@@ -394,7 +408,7 @@ ul.navList {
     font-size: 3rem;
   }
 
-  .createPickUpGame input{
+  .createPickUpGame input, textarea{
     width: 80vw;
   }
 
@@ -402,23 +416,3 @@ ul.navList {
     width: 80vw;
   }
 }
-
-@media (max-width: 1200px) {
-  .postContainer{
-    flex-direction: column;
-  }
-  .dateTimeSport, .detailsContainer{
-    text-align: center;
-    width: 400px;
-    height: auto;
-  }
-
-  .createPickUpGame h3 {
-    font-size: 3rem;
-  }
-
-  .createPickUpGame input{
-    width: 80vw;
-  }
-}
-
