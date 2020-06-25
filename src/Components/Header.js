@@ -10,7 +10,7 @@ const Header = ({ user, handleLogOut, showPickUpGamePost }) => {
                     {user.displayName ? <p>{user.displayName}</p> : <p>{user.email}</p>}
                 </li>
                 <li>
-                    <button type="submit" onClick={handleLogOut}>Log Out</button>
+                    <button tabIndex="2" type="submit" onClick={handleLogOut}>Log Out</button>
                 </li>
             </ul>
         </nav>

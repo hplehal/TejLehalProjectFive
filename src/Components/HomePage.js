@@ -50,12 +50,12 @@ class HomePage extends Component {
                 {
                     this.state.isButtonClicked ? < CreatePickUpGameForm user={user} showPickUpGamePost={this.showPickUpGamePost} /> :
                         <>
-                            <div className="dropInBanner">
-                                <button type="submit" onClick={this.showPickUpGameForm}>Create Pick Up Game Post</button>
+                            <section className="dropInBanner">
+                                <button tabIndex="3" type="submit" onClick={this.showPickUpGameForm}>Create Pick Up Game Post</button>
                                 <h3>Let’s Get Playing! Find the game that suits your style. </h3>
-                            </div>
+                            </section>
                             <section>
-                                <button type="submit" onClick={this.getGeolocation}> Find Post Near You</button>
+                                <button tabIndex="4" type="submit" onClick={this.getGeolocation}> Find Post Near You</button>
                                 {games.reverse().map((game, index) => {
                                     return (
                                         <GamePost key={index}

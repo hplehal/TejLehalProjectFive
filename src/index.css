@@ -122,6 +122,7 @@ footer {
   text-align: center;
   font-weight: 700;
   color: #ffffff;
+  margin-top: 10px;
 }
 
 h2 {
@@ -158,7 +159,6 @@ form{
 }
 
 .formHeading {
-  width:35%;
   background: #2E9CCA;
   border-radius: 20px;
   box-shadow: 0px 0px 14px;
@@ -295,6 +295,10 @@ ul.navList {
   padding: 15px;
 }
 
+.dateTimeSport p {
+  margin-bottom: 10px;
+}
+
 .detailsContainer {
   background-color: #2E9CCA;
   width:680px;
@@ -305,11 +309,24 @@ ul.navList {
  justify-content: center;
  align-items: center;
 }
+.detailsContainer h2{
+  margin: 0 0 8px;
+  cursor: default;
+}
+
+.detailsContainer p {
+  margin-bottom: 8px;
+}
 
 .detailsContainer button {
   margin: 10px;
   padding: 10px 25px;
   background-color: #25274D;
+}
+
+.gameLocation {
+  font-weight: 700;
+
 }
 
 .createPickUpGame {
@@ -333,16 +350,75 @@ ul.navList {
   letter-spacing: 2px;
 }
 
-
-
 .postButton {
   background-color: #2E9CCA;
   color: #25274D;
   margin: 20px 0;
   font-size: 2rem;
   font-weight: 700;
+  width: 30vw;
 }
 .marker{
   width: 30px;
+}
+
+@media (max-width: 480px) {
+  textarea{
+    width:80vw;
+  }
+  .formHeading {
+    width: 80vw;
+  }
+
+  li.userName { 
+    visibility: hidden;
+  }
+  .navList button{
+    width: 30vw;
+  }
+
+  .dropInBanner h3 {
+    font-size: 2rem;
+  }
+
+  .postContainer{
+    flex-direction: column;
+  }
+  .dateTimeSport, .detailsContainer{
+    text-align: center;
+    width: 100vw;
+    height: auto;
+  }
+
+  .createPickUpGame h3 {
+    font-size: 3rem;
+  }
+
+  .createPickUpGame input{
+    width: 80vw;
+  }
+
+  .postButton{
+    width: 80vw;
+  }
+}
+
+@media (max-width: 1200px) {
+  .postContainer{
+    flex-direction: column;
+  }
+  .dateTimeSport, .detailsContainer{
+    text-align: center;
+    width: 400px;
+    height: auto;
+  }
+
+  .createPickUpGame h3 {
+    font-size: 3rem;
+  }
+
+  .createPickUpGame input{
+    width: 80vw;
+  }
 }
 

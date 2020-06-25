@@ -16,9 +16,9 @@ const GamePost = ({ game, index }) => {
         mapGl.longitude = game.locationLatLng.lng;
     }
     return (
-        <div tabIndex="4    " className="postContainer">
-            <div className="mapContainer">
-                <ReactMapGL {...mapGl} maxZoom={12} mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}>
+        <div tabIndex="5" className="postContainer">
+            <div tabIndex="6" className="mapContainer">
+                <ReactMapGL {...mapGl} maxZoom={12} mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN} tabIndex="-1">
                     <Marker key={index} latitude={mapGl.latitude} longitude={mapGl.longitude}>
                         <img className="marker" src={pointer} alt="pointer to the map" />
                     </Marker>
@@ -32,10 +32,10 @@ const GamePost = ({ game, index }) => {
             </div>
             <div className="detailsContainer">
                 <h2>{game.title}</h2>
-                <p>{game.location}</p>
+                <p className="gameLocation">{game.location}</p>
 
                 <p>{game.description}</p>
-                <button type="submit">Get Direction</button>
+                <button tabIndex="7" type="submit">Get Direction</button>
             </div>
 
         </div>
