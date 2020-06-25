@@ -5,12 +5,10 @@ import pointer from '../assets/images/marker.png'
 
 const GamePost = ({ game, index }) => {
     const mapGl = {
-        width: 200,
+        width: 400,
         height: 200,
         latitude: 43.6532,
-        // game.locationLatLng.lat,
         longitude: 79.3832,
-        //  game.locationLatLng.lng,
         zoom: 13
     }
     if (game.locationLatLng !== undefined) {
@@ -18,7 +16,7 @@ const GamePost = ({ game, index }) => {
         mapGl.longitude = game.locationLatLng.lng;
     }
     return (
-        <div className="postContainer">
+        <div tabIndex="4    " className="postContainer">
             <div className="mapContainer">
                 <ReactMapGL {...mapGl} maxZoom={12} mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}>
                     <Marker key={index} latitude={mapGl.latitude} longitude={mapGl.longitude}>
@@ -27,12 +25,15 @@ const GamePost = ({ game, index }) => {
                 </ReactMapGL>
             </div>
             <div className="dateTimeSport">
+                <p>{game.date}</p>
+                <p>{game.time}</p>
                 <p>{game.typeOfSport}</p>
+                <p>{game.levelOfCompetition}</p>
             </div>
             <div className="detailsContainer">
                 <h2>{game.title}</h2>
                 <p>{game.location}</p>
-                <p>{game.levelOfCompetition}</p>
+
                 <p>{game.description}</p>
                 <button type="submit">Get Direction</button>
             </div>

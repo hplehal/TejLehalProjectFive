@@ -23,7 +23,7 @@ class LocationSearchInput extends Component {
                         />
                         <div className="autocomplete-dropdown-container">
                             {loading && <div>Loading...</div>}
-                            {suggestions.map(suggestion => {
+                            {suggestions.map((suggestion, index) => {
                                 let suggestionString = `${suggestion.terms[0].value}`
                                 if (suggestion.terms[2]) {
                                     suggestionString = suggestionString + `, ${suggestion.terms[2].value}`
@@ -41,7 +41,7 @@ class LocationSearchInput extends Component {
                                     ? { backgroundColor: '#fafafa', cursor: 'pointer' }
                                     : { backgroundColor: '#ffffff', cursor: 'pointer' };
                                 return (
-                                    <div
+                                    <div key={index}
                                         {...getSuggestionItemProps(suggestionString, {
                                             className,
                                             style,

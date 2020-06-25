@@ -56,7 +56,7 @@ class HomePage extends Component {
                             </div>
                             <section>
                                 <button type="submit" onClick={this.getGeolocation}> Find Post Near You</button>
-                                {games.map((game, index) => {
+                                {games.reverse().map((game, index) => {
                                     return (
                                         <GamePost key={index}
                                             game={game}
