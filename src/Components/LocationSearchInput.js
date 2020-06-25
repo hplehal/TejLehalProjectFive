@@ -19,6 +19,7 @@ class LocationSearchInput extends Component {
                                 placeholder: 'Search Places ...',
                                 className: 'location-search-input',
                             })}
+                            required
                         />
                         <div className="autocomplete-dropdown-container">
                             {loading && <div>Loading...</div>}

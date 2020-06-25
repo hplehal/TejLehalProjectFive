@@ -90,7 +90,7 @@ form{
   padding: 50px;
 }
 
-.formHeading input {
+input {
   background-color: #AAABB8;
   border-style: none;
   padding:10px;
@@ -105,7 +105,7 @@ form{
   padding: 10px;
   margin-bottom: 15px;
 }
-.logInButton:enabled{
+.logInButton:enabled, .signUpButton, .postButton{
   width: 150px;
   background-color: #25274D;
   border-style: none;
@@ -119,6 +119,8 @@ form{
   margin-bottom: 15px;
 }
 .googleButton {
+  color: #ffffff;
+  background-color: #D94C4C;
   width: 200px;
   padding:10px;
   border-style: none;
@@ -241,13 +243,15 @@ main {
 }
 .dateTimeSport {
   color: #ffffff;
-  background-color: #25274D;
+  background-color: hsl(237, 35%, 22%);
   height: 200px;
+  width: 120px;
   padding: 15px;
 }
 
 .detailsContainer {
   background-color: #2E9CCA;
+  width:680px;
   height:200px;
   padding: 20px;
   display: flex;
@@ -255,10 +259,51 @@ main {
  justify-content: center;
  align-items: center;
 }
+
+.detailsContainer button {
+  margin: 10px;
+  padding: 10px 25px;
+  background-color: #25274D;
+}
+
 .mapContainer{
 
 }
 
+.createPickUpGame {
+  height: 85vh;
+background: #25274D;  
+}
+
+.createPickUpGame h3{
+  color: #2E9CCA;
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 800;
+  padding: 40px;
+  margin-bottom: 20px;
+}
+
+.createPickUpGame input{
+  margin-bottom: 15px;
+  width: 30vw
+}
+
+label {
+  color: #ffffff;
+  
+}
+
+.postButton {
+  background-color: #2E9CCA;
+  color: #25274D;
+  margin: 20px 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.marker{
+  width: 30px;
+}
 section button{
   text-align: center;
   border-style: none;
