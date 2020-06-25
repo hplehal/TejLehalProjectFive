@@ -32,17 +32,17 @@ class LocationSearchInput extends Component {
                                 if (suggestion.terms[3]) {
                                     suggestionString = suggestionString + ` ${suggestion.terms[3].value}`
                                 }
-                                // const filteredSuggestion = suggestion.filter(suggestion => suggestion.type)
+
                                 const className = suggestion.active
-                                    ? 'suggestion-item--active'
-                                    : 'suggestion-item';
-                                // // inline style for demonstration purpose
+                                    ? 'suggestionItemActive'
+                                    : 'suggestionItem';
                                 const style = suggestion.active
-                                    ? { backgroundColor: '#fafafa', cursor: 'pointer' }
-                                    : { backgroundColor: '#ffffff', cursor: 'pointer' };
+                                    ? { backgroundColor: '#2E9CCA', color: '#ffffff', cursor: 'pointer' }
+                                    : { backgroundColor: '#25274D', color: '#ffffff', cursor: 'pointer' };
+
                                 return (
                                     <div key={index}
-                                        {...getSuggestionItemProps(suggestionString, {
+                                        {...getSuggestionItemProps(suggestion, {
                                             className,
                                             style,
                                         })}

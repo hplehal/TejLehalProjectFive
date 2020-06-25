@@ -9,7 +9,6 @@ class LogInPage extends Component {
             isLogInOpen: true,
             email: '',
             password: '',
-            // passwordTwo: '',
         }
     }
 

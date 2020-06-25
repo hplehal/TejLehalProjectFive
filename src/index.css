@@ -91,6 +91,11 @@ nav{
 main {
   background-color: #29648A;
 }
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
 textarea{
   width: 30vw;
   background-color: #AAABB8;
@@ -297,6 +302,7 @@ ul.navList {
 
 .dateTimeSport p {
   margin-bottom: 10px;
+  font-weight: 700;
 }
 
 .detailsContainer {

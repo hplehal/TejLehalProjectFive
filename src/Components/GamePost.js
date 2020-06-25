@@ -35,7 +35,7 @@ const GamePost = ({ game, index }) => {
                 <p className="gameLocation">{game.location}</p>
 
                 <p>{game.description}</p>
-                <button tabIndex="7" type="submit">Get Direction</button>
+                <button tabIndex="7" type="submit" > <a target="_blank" rel="noopener noreferrer" href={`http://maps.google.com?q=${mapGl.latitude},${mapGl.longitude}`}>Get Direction</a></button>
             </div>
 
         </div>
