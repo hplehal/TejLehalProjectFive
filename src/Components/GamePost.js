@@ -8,12 +8,12 @@ const GamePost = ({ game }) => {
         height: 200,
         latitude: game.locationLatLng.lat,
         longitude: game.locationLatLng.lng,
-        zoom: 12
+        zoom: 13
     }
     return (
         <div className="postContainer">
             <div className="mapContainer">
-                <ReactMapGL {...mapGl} maxZoom={20} mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN} />
+                <ReactMapGL {...mapGl} maxZoom={12} mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN} />
             </div>
             <div className="dateTimeSport">
                 <p>{game.typeOfSport}</p>

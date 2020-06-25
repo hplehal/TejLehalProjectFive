@@ -168,6 +168,7 @@ nav{
 }
 
 h2 {
+  cursor: pointer;
   text-transform: uppercase;
   display: flex;
   align-items: center;

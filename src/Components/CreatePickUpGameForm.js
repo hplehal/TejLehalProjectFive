@@ -15,6 +15,7 @@ class CreatePickUpGameForm extends Component {
         this.state = {
             title: '',
             location: '',
+            time: '',
             levelOfCompetition: '',
             description: '',
             typeOfSport: '',
@@ -56,11 +57,13 @@ class CreatePickUpGameForm extends Component {
         this.setState({
             title: '',
             location: '',
+            time: '',
             levelOfCompetition: '',
             description: '',
             typeOfSport: '',
             locationLatLng: {}
         })
+        this.props.showPickUpGamePost();
     }
 
     render() {
@@ -72,13 +75,15 @@ class CreatePickUpGameForm extends Component {
                     <input type="text" onChange={this.handleChange} name="title" id="pickUpGameTitle" value={this.state.title} />
                     <label>Location</label>
                     <LocationSearchInput handleChange={this.handleLocationChange} handleSelect={this.handleSelect} name="location" id="pickUpGameLocation" value={this.state.location} />
+                    <label>When</label>
+                    <input type="text" onChange={this.handleChange} name="title" id="pickUpGameTime" value={this.state.time} />
                     <label>Brief Description</label>
                     <textarea name="description" onChange={this.handleChange} id="pickUpGameDescription" value={this.state.description} cols="30" rows="10"></textarea>
                     <label>Level Of Competition</label>
                     <input type="text" onChange={this.handleChange} name="levelOfCompetition" id="pickUpGameLevelOfDifficulty" value={this.state.levelOfCompetition} />
                     <label>Sport</label>
                     <input type="text" onChange={this.handleChange} name="typeOfSport" id="pickUpGameSport" value={this.state.typeOfSport} />
-                    <button onClick={this.handleSubmit} type="submit">Post</button>
+                    <button onClick={(events) => { this.handleSubmit(events); this.props.showPickUpGamePost(events); }} type="submit">Post</button>
                 </form>
             </div>
         );

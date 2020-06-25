@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Header({ user, handleLogOut }) {
+function Header({ user, handleLogOut, showPickUpGamePost }) {
     return (
         <nav>
-            <h2>Drop<span>i</span>n</h2>
+            <h2 onClick={showPickUpGamePost}>Drop<span>i</span>n</h2>
             <ul className="navList">
                 <li className="userName">
                     <img src={user.photoUrl} alt="" />
